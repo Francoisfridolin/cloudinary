@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Une galerie photo responsive qui présente des images hébergées sur Cloudinary."
+    >
+    <meta name="theme-color" content="#f5f3ee">
+    <title>Regards — Galerie Cloudinary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Regards, accueil">
+        <span class="brand-mark" aria-hidden="true">R.</span>
+        <span>REGARDS <span class="brand-divider">/</span> GALERIE PHOTO</span>
+      </a>
+      <a class="header-link" href="#galerie">Découvrir la galerie <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> IMAGES HÉBERGÉES SUR CLOUDINARY</p>
+        <h1 id="page-title">Des images,<br><em>un autre regard.</em></h1>
+        <div class="intro-bottom">
+          <p>
+            Une galerie personnelle pour découvrir des images hébergées sur Cloudinary.
+            Ouvrez une photo pour la partager ou la télécharger.
+          </p>
+          <a class="scroll-link" href="#galerie">Explorer <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="galerie" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">COLLECTION PERSONNELLE</p>
+            <h2 id="gallery-title">La galerie <span>—</span> <span id="image-count">04 images</span></h2>
+          </div>
+          <p class="section-note">Sélectionnez une image pour afficher son lien Cloudinary.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#" aria-label="Retour en haut">
+        <span class="brand-mark" aria-hidden="true">R.</span>
+        <span>REGARDS</span>
+      </a>
+      <p>Galerie photo réalisée avec des images hébergées sur <a href="https://cloudinary.com/" target="_blank" rel="noopener noreferrer">Cloudinary</a>.</p>
+      <a class="back-to-top" href="#">Retour en haut ↑</a>
+    </footer>
+
+    <dialog class="image-dialog" id="image-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-layout">
+        <div class="dialog-image-wrap">
+          <button class="close-button" id="close-dialog" type="button" aria-label="Fermer la visionneuse">×</button>
+          <a class="full-image-link" id="full-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir l'image originale dans un nouvel onglet">
+            <img id="dialog-image" alt="">
+          </a>
+        </div>
+        <div class="dialog-details">
+          <p class="eyebrow">IMAGE CLOUDINARY</p>
+          <h2 id="dialog-title"></h2>
+          <p class="dialog-description" id="dialog-description"></p>
+          <label class="url-label" for="image-url">URL publique de l’image</label>
+          <div class="url-field">
+            <input id="image-url" type="url" readonly>
+            <button class="copy-button" id="copy-url" type="button" aria-label="Copier l’URL de l’image">Copier</button>
+          </div>
+          <div class="dialog-actions">
+            <a class="action-button action-primary" id="download-image" download>Télécharger <span aria-hidden="true">↓</span></a>
+            <button class="action-button action-secondary" id="share-image" type="button">Partager <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="action-status" id="action-status" role="status" aria-live="polite"></p>
+          <p class="dialog-hint">L’image originale s’ouvre dans un nouvel onglet si vous sélectionnez la photo.</p>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
